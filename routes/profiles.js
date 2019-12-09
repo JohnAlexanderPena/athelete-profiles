@@ -98,6 +98,7 @@
    Profile.find()
    .populate('profile', ['name'])
    .then(profiles => {
+     debugger;
      if(!profiles) { //if no profiles are found
        errors.noprofile = 'There are no profiles'; // add error into error object
        return res.status(404).json(errors)
