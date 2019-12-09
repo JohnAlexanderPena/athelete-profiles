@@ -82,8 +82,8 @@ app.use((err, req, res, next) => {
 
 
 
-const PORT = process.env.PORT || 5000
+const port = process.env.port || 5000
 
-app.listen(PORT, () => console.log(`Server running on ${PORT}`)) // Will run the files
+app.listen(port, () => console.log(`Server running on ${port}`)) // Will run the files
 
-// module.exports = app;
+module.exports = app;

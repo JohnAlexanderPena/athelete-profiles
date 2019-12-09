@@ -1,5 +1,7 @@
  const express = require('express');
  const router = express.Router();
+ const mongoose = require('mongoose');
+
 
 
  const validateProfileInput = require('../validation/profile')
@@ -94,7 +96,7 @@
    const errors = {};
 
    Profile.find()
-   // .populate('profile', ['name'])
+   .populate('profile', ['name'])
    .then(profiles => {
      if(!profiles) { //if no profiles are found
        errors.noprofile = 'There are no profiles'; // add error into error object

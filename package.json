@@ -2,9 +2,9 @@
   "name": "generator-start",
   "version": "1.0.0",
   "private": true,
-  "main": "app",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+
     "client-install": "npm install --prefix client",
     "start": "node app.js",
     "server": "nodemon app",
