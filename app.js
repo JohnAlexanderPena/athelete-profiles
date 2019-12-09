@@ -52,17 +52,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.options('*', cors())
 
-app.use('/profiles', cors(), profile);
 
 // Server static assets if in production
 if(process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'))
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', index.html));
-  })
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, 'client', 'build', index.html));
+  // })
 }
 
+app.use('/profiles', cors(), profile);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -86,4 +86,4 @@ const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(`Server running on ${PORT}`)) // Will run the files
 
-module.exports = app;
+// module.exports = app;

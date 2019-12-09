@@ -91,7 +91,6 @@
  // @access Public
  router.get('/all', (req, res, next) => {
 
-
    const errors = {};
 
    Profile.find()
@@ -101,7 +100,6 @@
        errors.noprofile = 'There are no profiles'; // add error into error object
        return res.status(404).json(errors)
      }
-     console.log(profiles)
 
      res.json(profiles) // shoe all profiles
    })
