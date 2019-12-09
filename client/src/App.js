@@ -10,8 +10,6 @@ import CreateProfile from './components/CreateProfile'
 
 class App extends Component {
 
-
-
   render() {
     return (
     <Provider store={store}>
