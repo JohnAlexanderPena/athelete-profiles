@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
+require('dotenv').config({ path: '.config/keys_dev' });
 
 
 //Body parser middleware
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 
 
 // DB Config
-const db = require('./config/keys.js').mongoURI
+const db = require('./config/keys_prod').mongoURI
 
 // Connect to MongoDB
 mongoose
