@@ -37,13 +37,6 @@ class CreateProfile extends React.Component {
     errors: {}
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if(nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      })
-    }
-  }
 
   onChange = (event) => {
     event.preventDefault()
