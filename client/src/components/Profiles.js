@@ -13,31 +13,31 @@ class Profiles extends React.Component {
   }
 
   render () {
-    const showProfileName = this.props.profiles.profiles.map(profile => {
 
-      const entries = profile.social ? Object.entries(profile.social) : null
+    const showProfileName = this.props.profiles.profiles ? this.props.profiles.profiles.map(profile => {
+          const entries = profile.social ? Object.entries(profile.social) : null
 
-      const socialMedias = entries ? entries.map(entry =>{
-        return (<li>{entry[0]}: {entry[1]}</li>)
-      }) : null
+          const socialMedias = entries ? entries.map(entry =>{
+            return (<li>{entry[0]}: {entry[1]}</li>)
+          }) : null
 
 
-      return (
-        <tr key={profile.name}>
-      <td>{profile.name}</td>
-      <td>{profile.birthday}</td>
-      <ul>
-        <li>Location: {profile.about.location || "empty"}</li>
-        <li>Team: {profile.about.team || "empty"}</li>
-      </ul>
-      <td>Sports Played: {profile.sports.join(',')}<br/>
-          Favorite Charities: {profile.charities.join(',')}<br/>
-          Pets: {profile.pets ? profile.pets.join(',') : null}<br/>
-          Social Media: {profile.social ? socialMedias : []}
-      </td>
-    </tr>
-  )}
-    )
+          return (
+            <tr key={profile.name}>
+          <td>{profile.name}</td>
+          <td>{profile.birthday}</td>
+          <ul>
+            <li>Location: {profile.about.location || "empty"}</li>
+            <li>Team: {profile.about.team || "empty"}</li>
+          </ul>
+          <td>Sports Played: {profile.sports.join(',')}<br/>
+              Favorite Charities: {profile.charities.join(',')}<br/>
+              Pets: {profile.pets ? profile.pets.join(',') : null}<br/>
+              Social Media: {profile.social ? socialMedias : []}
+          </td>
+        </tr>
+      )}
+    ) :  null
 
 
     return(
