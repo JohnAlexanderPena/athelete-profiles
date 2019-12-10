@@ -6,7 +6,7 @@ import { GET_PROFILES, ADD_PROFILE } from './types'
 export const getAllProfiles = () => dispatch => {
   axios.get('profiles/all')
   .then( res => {
-    console.log(res)
+    debugger;
     dispatch({
       type: GET_PROFILES,
       payload: res.data
