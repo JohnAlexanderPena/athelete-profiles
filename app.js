@@ -36,7 +36,7 @@ const db = require('./config/keys.js').mongoURI
 
 // Connect to MongoDB
 mongoose
-  .connect(db,{
+  .connect("mongodb+srv://jpena:jeepsrt8@cluster0-ch5nd.mongodb.net/test?retryWrites=true&w=majority",{
 useUnifiedTopology: true,
 useNewUrlParser: true,
 useFindAndModify: false,
