@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+// const logger = require('morgan');
 
 
 
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -32,7 +32,7 @@ app.options('*', cors())
 
 
 // DB Config
-const db = require('./config/keys_dev.js').mongoURI
+const db = require('./config/keys_prod.js').mongoURI
 
 // Connect to MongoDB
 mongoose
@@ -62,9 +62,9 @@ app.use(cors())
 if(process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'))
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', index.html));
-  // })
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', index.html));
+  })
 }
 
 app.use('/profiles', cors(), profile);
