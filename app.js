@@ -27,7 +27,7 @@ useUnifiedTopology: true,
 useNewUrlParser: true,
 useFindAndModify: false,
 })
-  .then(() => console.log("MongoDB Connected"))
+  .then(() => console.log("MongoDB Connected", db))
   .catch(err => console.log(err))
 
 
