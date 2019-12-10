@@ -2,7 +2,7 @@ import { GET_PROFILES, ADD_PROFILE } from '../actions/types'
 
 
 const initialState = {
-  profile: {},
+  // profile: {},
   profiles: [],
 }
 

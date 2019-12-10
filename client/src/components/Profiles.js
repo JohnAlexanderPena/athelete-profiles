@@ -11,16 +11,19 @@ class Profiles extends React.Component {
 
   componentDidMount() {
     this.props.getAllProfiles()
-    console.log(this.props.profiles, "MOUNTING")
+
+    console.log(this.props.profiles.profiles.length, "MOUNTING")
   }
 
   render () {
-
+    console.log(this.props.profiles.profiles.length, "First render")
     let showProfileName;
-    if(this.props.profiles.profiles === null || this.props.profiles.profiles.length === 0  ) {
+    if(this.props.profiles.profiles.length === 0  ) {
+      console.log(this.props, "Nothing inside profiles")
       showProfileName = <h1>Loading</h1>
     } else {
       if(Object.keys(this.props.profiles.profiles.length > 0)) {
+        console.log(this.props.profiles.profiles, "Inside else loop")
         showProfileName = this.props.profiles.profiles.map(profile => {
               const entries = profile.social ? Object.entries(profile.social) : null
               const socialMedias = entries ? entries.map(entry =>{
@@ -46,9 +49,6 @@ class Profiles extends React.Component {
         )
       }
     }
-
-    // showProfileName = this.props.profiles.profiles === null ? <h1>Loading</h1> :
-
 
     return(
       <div>
