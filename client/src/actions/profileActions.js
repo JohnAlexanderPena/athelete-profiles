@@ -6,7 +6,6 @@ import { GET_PROFILES, ADD_PROFILE } from './types'
 export const getAllProfiles = () => dispatch => {
   axios.get('profiles/all')
   .then( res => {
-    debugger;
     dispatch({
       type: GET_PROFILES,
       payload: res.data
@@ -25,7 +24,6 @@ export const createProfile = (profileData, history) => dispatch => {
     axios.post('profiles/', profileData)
     .then(res =>
      {
-        debugger;
        dispatch({
         type: ADD_PROFILE,
         payload: res.data
