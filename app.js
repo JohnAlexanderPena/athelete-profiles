@@ -8,6 +8,9 @@ const path = require('path')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors')
+const createError = require('http-errors');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 
 
@@ -29,7 +32,7 @@ app.options('*', cors())
 
 
 // DB Config
-const db = require('./config/keys.js').mongoURI
+const db = require('./config/keys_dev.js').mongoURI
 
 // Connect to MongoDB
 mongoose
@@ -43,9 +46,7 @@ useFindAndModify: false,
 
 
 
-const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+
 
 
 app.use(cors())
