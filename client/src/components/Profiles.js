@@ -10,10 +10,12 @@ class Profiles extends React.Component {
 
   componentDidMount() {
     this.props.getAllProfiles()
+    console.log(this.props.profiles, "MOUNTING")
   }
 
   render () {
-    const showProfileName = this.props.profiles.profiles.length > 0 ? this.props.profiles.profiles.map(profile => {
+    console.log(this.props.profiles.profiles.length, "rendered")
+    const showProfileName = this.props.profiles.profiles.length < 0 ? this.props.profiles.profiles.map(profile => {
           const entries = profile.social ? Object.entries(profile.social) : null
 
           const socialMedias = entries ? entries.map(entry =>{
