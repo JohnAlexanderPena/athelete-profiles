@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 // const personRoute = require('./routes/person');
 const profile = require('./routes/profiles');
@@ -51,6 +52,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.options('*', cors())
+
+
 
 
 // Server static assets if in production
