@@ -32,7 +32,7 @@ app.options('*', cors())
 
 
 // DB Config
-const db = require('./config/keys_prod.js').mongoURI
+const db = require('./config/keys.js').mongoURI
 
 // Connect to MongoDB
 mongoose
